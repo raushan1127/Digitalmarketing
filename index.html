@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright & Catchy Digital Marketing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #FF6B6B; /* Bright Red-Orange */
+            --secondary-color: #FFE66D; /* Sunny Yellow */
+            --accent-color: #4ECDC4; /* Aqua Green */
+            --dark-text: #333;
+            --light-text: #f0f0f0;
+            --background-light: #f7f7f7;
+            --background-dark: #2c3e50;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--background-dark);
+            color: var(--light-text);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header .logo span {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: bubble1 10s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: bubble2 8s infinite ease-in-out;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 18px 35px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            animation: bounceIn 1.2s ease-out;
+        }
+
+        .hero .btn:hover {
+            background-color: #3aa69e; /* Darker Aqua */
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Sections (General Styling) --- */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 5px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 10%;
+            border-radius: 5px;
+        }
+
+        /* --- About Section --- */
+        .about-us {
+            background-color: var(--background-light);
+            padding-top: 100px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .about-content .text-block {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-content .image-block {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2em;
+            color: var(--dark-text);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* --- Call to Action --- */
+        .cta {
+            background: linear-gradient(45deg, var(--accent-color), #6eebbe);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+        }
+        .cta h2::after {
+            background-color: white;
+        }
+
+        .cta p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.4em;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta .btn:hover {
+            background-color: #e65c5c; /* Darker Primary */
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--background-dark);
+            color: var(--light-text);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes bubble1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, 30px); }
+        }
+
+        @keyframes bubble2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-25px, -15px); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .hero .btn {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+
+            .section h2 {
+                font-size: 2.2em;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-content img {
+                max-width: 80%;
+            }
+
+            .cta h2 {
+                font-size: 2em;
+            }
+
+            .cta p {
+                font-size: 1.1em;
+            }
+
+            .cta .btn {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Bright<span>Flow</span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Ignite Your Brand's Online Presence</h1>
+                <p>We craft dazzling digital strategies that capture attention and drive real results. Let's make your brand shine!</p>
+                <a href="services.html" class="btn">Our Services</a>
+            </div>
+        </section>
+
+        ---
+
+        <section class="section about-us">
+            <div class="container">
+                <h2>Who We Are</h2>
+                <div class="about-content">
+                    <div class="text-block">
+                        <h3>Your Partners in Digital Success</h3>
+                        <p>At BrightFlow, we're passionate about helping businesses like yours thrive in the digital landscape. With a team of expert marketers, strategists, and creatives, we combine innovative thinking with data-driven insights to deliver outstanding performance.</p>
+                        <p>From captivating social media campaigns to highly optimized search engine strategies, we tailor our solutions to meet your unique goals and propel your brand forward. We believe in transparency, collaboration, and delivering measurable ROI.</p>
+                    </div>
+                    <div class="image-block">
+                        <img src="https://via.placeholder.com/600x400/FFD166/333333?text=Creative+Digital+Team" alt="Team collaborating on digital marketing">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Transform Your Digital World?</h2>
+                <p>Don't get lost in the noise. Partner with BrightFlow and stand out from the crowd. Let's create something extraordinary together.</p>
+                <a href="services.html" class="btn">Explore Our Services</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BrightFlow Digital Marketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
