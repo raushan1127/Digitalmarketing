@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - BrightFlow Digital Marketing</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #FF6B6B; /* Bright Red-Orange */
+            --secondary-color: #FFE66D; /* Sunny Yellow */
+            --accent-color: #4ECDC4; /* Aqua Green */
+            --dark-text: #333;
+            --light-text: #f0f0f0;
+            --background-light: #f7f7f7;
+            --background-dark: #2c3e50;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--background-dark);
+            color: var(--light-text);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-decoration: none; /* Ensure logo is clickable and doesn't have underline */
+            display: inline-block; /* Allow padding/margin if needed */
+        }
+
+        header .logo span {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section for Services --- */
+        .services-hero {
+            background: linear-gradient(135deg, var(--accent-color), #6eebbe);
+            color: var(--light-text);
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .services-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .services-hero p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Services Grid --- */
+        .services-grid {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .services-grid h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .services-grid h2::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 5px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 10%;
+            border-radius: 5px;
+        }
+
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: calc(50% - 40px); /* Two cards per row, with gap */
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2em;
+            color: var(--dark-text);
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .service-card p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .service-card ul li {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-card ul li::before {
+            content: '✓'; /* Checkmark icon */
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- Enquire Button --- */
+        .enquire-section {
+            text-align: center;
+            padding: 60px 20px 80px;
+            background-color: var(--background-light);
+        }
+
+        .enquire-section .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.4em;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .enquire-section .btn:hover {
+            background-color: #e65c5c; /* Darker Primary */
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--background-dark);
+            color: var(--light-text);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* --- Animations (from index.html, for consistency) --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .service-card {
+                width: calc(100% - 40px); /* One card per row on smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2.8em;
+            }
+
+            .services-hero p {
+                font-size: 1.1em;
+            }
+
+            .services-grid h2 {
+                font-size: 2.2em;
+            }
+
+            .service-card h3 {
+                font-size: 1.8em;
+            }
+
+            .service-card p {
+                font-size: 1em;
+            }
+
+            .enquire-section .btn {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-hero h1 {
+                font-size: 2.2em;
+            }
+
+            .services-grid h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Bright<span>Flow</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="services-hero">
+            <div class="container">
+                <h1>Our Core Digital Marketing Services</h1>
+                <p>Discover how we can elevate your brand with our tailored, results-driven strategies.</p>
+            </div>
+        </section>
+
+        ---
+
+        <section class="services-grid">
+            <div class="container">
+                <h2>Solutions Designed for Your Success</h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <h3>Search Engine Optimization (SEO)</h3>
+                        <p>Boost your visibility and rank higher on search engines like Google. Our SEO strategies are designed to drive organic traffic and qualified leads to your website.</p>
+                        <ul>
+                            <li>Keyword Research & Strategy</li>
+                            <li>On-Page & Technical SEO</li>
+                            <li>Content Optimization</li>
+                            <li>Link Building & Authority</li>
+                            <li>Performance Tracking & Reporting</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Social Media Marketing</h3>
+                        <p>Engage with your audience, build brand loyalty, and drive conversions across popular social platforms. We create captivating content and manage effective ad campaigns.</p>
+                        <ul>
+                            <li>Social Media Strategy Development</li>
+                            <li>Content Creation & Curation</li>
+                            <li>Community Management</li>
+                            <li>Paid Social Advertising (Facebook, Instagram, LinkedIn, etc.)</li>
+                            <li>Audience Growth & Engagement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section class="enquire-section">
+            <div class="container">
+                <a href="enquire.html" class="btn">Enquire Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BrightFlow Digital Marketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
