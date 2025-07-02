@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquire Now - BrightFlow Digital Marketing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #FF6B6B; /* Bright Red-Orange */
+            --secondary-color: #FFE66D; /* Sunny Yellow */
+            --accent-color: #4ECDC4; /* Aqua Green */
+            --dark-text: #333;
+            --light-text: #f0f0f0;
+            --background-light: #f7f7f7;
+            --background-dark: #2c3e50;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 900px; /* Slightly narrower for forms */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--background-dark);
+            color: var(--light-text);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        header .logo span {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section for Enquire --- */
+        .enquire-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .enquire-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .enquire-hero p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Form Section --- */
+        .enquire-form-section {
+            padding: 80px 20px;
+            background-color: var(--background-light);
+            text-align: center;
+        }
+
+        .enquire-form-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3em;
+            color: var(--accent-color);
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .enquire-form-section h2::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 5px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 10%;
+            border-radius: 5px;
+        }
+
+        .enquire-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--dark-text);
+            font-size: 1.1em;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"],
+        .form-group textarea,
+        .form-group select {
+            width: calc(100% - 22px); /* Account for padding and border */
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: 'Roboto', sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.3);
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 18px 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+        }
+
+        .submit-btn:hover {
+            background-color: #3aa69e; /* Darker Aqua */
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--background-dark);
+            color: var(--light-text);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .enquire-hero h1 {
+                font-size: 2.8em;
+            }
+
+            .enquire-hero p {
+                font-size: 1.1em;
+            }
+
+            .enquire-form-section h2 {
+                font-size: 2.2em;
+            }
+
+            .enquire-form {
+                padding: 30px;
+            }
+
+            .submit-btn {
+                font-size: 1.3em;
+                padding: 15px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .enquire-hero h1 {
+                font-size: 2.2em;
+            }
+
+            .enquire-form-section h2 {
+                font-size: 1.8em;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Bright<span>Flow</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="enquire-hero">
+            <div class="container">
+                <h1>Ready to Get Started?</h1>
+                <p>Fill out the form below and let's discuss how BrightFlow can supercharge your digital presence.</p>
+            </div>
+        </section>
+
+        ---
+
+        <section class="enquire-form-section">
+            <div class="container">
+                <h2>Tell Us About Your Project</h2>
+                <form action="thankyou.html" method="GET" class="enquire-form">
+                    <div class="form-group">
+                        <label for="name">Your Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name (Optional)</label>
+                        <input type="text" id="company" name="company" placeholder="Your Business Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="123, Main Street" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="Howrah" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pincode">Pin Code</label>
+                        <input type="number" id="pincode" name="pincode" placeholder="711101" pattern="[0-9]{6}" title="Please enter a 6-digit pin code" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Interested Service(s)</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="seo">Search Engine Optimization (SEO)</option>
+                            <option value="social-media">Social Media Marketing</option>
+                            <option value="ppc">Paid Advertising (PPC)</option>
+                            <option value="content">Content Marketing</option>
+                            <option value="web-dev">Website Design & Development</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message / Project Details</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us more about your digital marketing needs and goals..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Enquiry</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BrightFlow Digital Marketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
