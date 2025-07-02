@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - BrightFlow Digital Marketing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #FF6B6B; /* Bright Red-Orange */
+            --secondary-color: #FFE66D; /* Sunny Yellow */
+            --accent-color: #4ECDC4; /* Aqua Green */
+            --dark-text: #333;
+            --light-text: #f0f0f0;
+            --background-light: #f7f7f7;
+            --background-dark: #2c3e50;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--background-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--background-dark);
+            color: var(--light-text);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        header .logo span {
+            color: var(--primary-color);
+        }
+
+        /* --- Thank You Section --- */
+        .thankyou-section {
+            flex-grow: 1; /* Allows this section to take up available space */
+            background: linear-gradient(135deg, var(--accent-color), #6eebbe);
+            color: var(--light-text);
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .thankyou-section h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .thankyou-section p {
+            font-size: 1.6em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out 0.3s forwards; /* Add a delay */
+            opacity: 0; /* Start invisible for animation */
+        }
+
+        .thankyou-buttons {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-out 0.6s forwards; /* Add a delay */
+            opacity: 0; /* Start invisible for animation */
+        }
+
+        .thankyou-buttons .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .thankyou-buttons .btn.primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .thankyou-buttons .btn.primary:hover {
+            background-color: #e65c5c; /* Darker Primary */
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .thankyou-buttons .btn.secondary {
+            background-color: var(--secondary-color);
+            color: var(--dark-text);
+        }
+
+        .thankyou-buttons .btn.secondary:hover {
+            background-color: #f0cc5c; /* Darker Secondary */
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--background-dark);
+            color: var(--light-text);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .thankyou-section {
+                padding: 80px 20px;
+            }
+            .thankyou-section h1 {
+                font-size: 3em;
+            }
+            .thankyou-section p {
+                font-size: 1.3em;
+            }
+            .thankyou-buttons {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .thankyou-buttons .btn {
+                width: 80%; /* Make buttons wider on smaller screens */
+                max-width: 300px;
+                margin: 0 auto;
+                font-size: 1.1em;
+                padding: 15px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .thankyou-section h1 {
+                font-size: 2.2em;
+            }
+            .thankyou-section p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Bright<span>Flow</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="thankyou-section">
+            <div class="container">
+                <h1>Thank You for Your Enquiry!</h1>
+                <p>We've received your message and our team will be in touch with you very soon to discuss how we can help your brand shine.</p>
+                <div class="thankyou-buttons">
+                    <a href="index.html" class="btn primary">Go to Homepage</a>
+                    <a href="sample.pdf" download="BrightFlow_Brochure.pdf" class="btn secondary">Download Brochure</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BrightFlow Digital Marketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
